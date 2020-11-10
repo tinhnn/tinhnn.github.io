@@ -16,9 +16,8 @@ author: Some Person
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - xxx: "https://github.com/tinhnn"
+    - yyy: "https://github.com/tinhnn"
 
 # --- Logo --- #
 
