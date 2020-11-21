@@ -34,10 +34,10 @@
   
     
   
-  <meta name="description" content="Technical Leader">
+  <meta name="description" content="ROS cho STM series">
 
   
-  <link rel="alternate" hreflang="en-us" href="/404.html">
+  <link rel="alternate" hreflang="en-us" href="/post/rosserial_stm32/">
 
   
 
@@ -261,7 +261,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/404.html">
+  <link rel="canonical" href="/post/rosserial_stm32/">
 
   
   
@@ -277,18 +277,63 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="TinhNN Blog">
-  <meta property="og:url" content="/404.html">
-  <meta property="og:title" content="404 Page not found | TinhNN Blog">
-  <meta property="og:description" content="Technical Leader"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/post/rosserial_stm32/">
+  <meta property="og:title" content="ROS Serial cho STM32 | TinhNN Blog">
+  <meta property="og:description" content="ROS cho STM series"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-11-21T00:00:00&#43;09:00">
+    
+    <meta property="article:modified_time" content="2020-11-21T00:00:00&#43;09:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/rosserial_stm32/"
+  },
+  "headline": "ROS Serial cho STM32",
+  
+  "datePublished": "2020-11-21T00:00:00+09:00",
+  "dateModified": "2020-11-21T00:00:00+09:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Nguyen Nhan Tinh"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "TinhNN Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "ROS cho STM series"
+}
+</script>
+
+  
 
   
 
@@ -296,10 +341,13 @@
   
 
 
+  
 
 
 
-  <title>404 Page not found | TinhNN Blog</title>
+
+
+  <title>ROS Serial cho STM32 | TinhNN Blog</title>
 
 </head>
 
@@ -545,33 +593,259 @@
   </div>
 
   <div class="page-body">
-    <div class="universal-wrapper pt-3">
-
-  <h1>Page not found</h1>
-
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+    <article class="article">
 
   
 
-  <p>Perhaps you were looking for one of these?</p>
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
   
   
-  <h2>Latest</h2>
-  <ul>
+<div class="article-container pt-3">
+  <h1>ROS Serial cho STM32</h1>
+
+  
+
+  
     
-      <li><a href="/post/rosserial_stm32/">ROS Serial cho STM32</a></li>
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
     
-  </ul>
+
+  
+  <span ><a href="/author/nguyen-nhan-tinh/">Nguyen Nhan Tinh</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Nov 21, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
   
 
 </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="span-stylecolorbluegiới-thiệuspan"><span style="color:blue">Giới thiệu:</span></h2>
+<p>ROS chỉ được hỗ trợ chính thức trên hệ điều hành nhân linux. Vì vậy khi thực hiện những tác vụ đòi hỏi thời gian thực, độ chính xác về timing cao thì hệ thống linux không đáp ứng được. Bài viết hướng dẫn đưa ROS serial lên STM32 để có thể đáp ứng được yêu cầu.</p>
+<p>Phần cứng trong bài viết được sử dụng là board Nucleo STM32F746ZG chạy trên FreeRTOS. Có thể sử dụng board khác bằng cách sử dụng STMcubeIDE để generate lại board phù hợp và thay đổi config GPIO. Ngoài ra còn 1 board để chạy ROS core là RaspberryPi 4. 2 board giao tiếp qua USB CDC.</p>
+<h2 id="span-stylecolorbluenội-dungspan"><span style="color:blue">Nội dung:</span></h2>
+<p>Các bạn tham khảo tại github theo link:
+<a href="https://github.com/tinhnn/rosserial_stm32f7xx">https://github.com/tinhnn/rosserial_stm32f7xx</a></p>
+<h2 id="span-stylecolorbluetham-khảospan"><span style="color:blue">Tham khảo:</span></h2>
+<p><a href="http://wiki.ros.org/rosserial">http://wiki.ros.org/rosserial</a></p>
+<p><a href="https://github.com/nquantum/stm32_rosserial">https://github.com/nquantum/stm32_rosserial</a></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/ros/">ROS</a>
+  
+  <a class="badge badge-light" href="/tag/ros-serial/">ros serial</a>
+  
+  <a class="badge badge-light" href="/tag/stm/">STM</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/rosserial_stm32/&amp;text=ROS%20Serial%20cho%20STM32" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/rosserial_stm32/&amp;t=ROS%20Serial%20cho%20STM32" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=ROS%20Serial%20cho%20STM32&amp;body=/post/rosserial_stm32/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/rosserial_stm32/&amp;title=ROS%20Serial%20cho%20STM32" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=ROS%20Serial%20cho%20STM32%20/post/rosserial_stm32/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/rosserial_stm32/&amp;title=ROS%20Serial%20cho%20STM32" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
   </div>
 
   <div class="page-footer">

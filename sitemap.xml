@@ -4,6 +4,47 @@
   
   <url>
     <loc>/authors/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/nguyen-nhan-tinh/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/ros/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/ros-serial/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/rosserial_stm32/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/stm/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -12,10 +53,6 @@
   
   <url>
     <loc>/author/nguyen-nhan-tinh/</loc>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
   </url>
   
   <url>
@@ -28,14 +65,6 @@
   
   <url>
     <loc>/talk/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>/</loc>
   </url>
   
 </urlset>

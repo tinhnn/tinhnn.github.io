@@ -5,12 +5,29 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0900</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>ROS Serial cho STM32</title>
+      <link>/post/rosserial_stm32/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0900</pubDate>
+      <guid>/post/rosserial_stm32/</guid>
+      <description>&lt;h2 id=&#34;span-stylecolorbluegiới-thiệuspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Giới thiệu:&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;ROS chỉ được hỗ trợ chính thức trên hệ điều hành nhân linux. Vì vậy khi thực hiện những tác vụ đòi hỏi thời gian thực, độ chính xác về timing cao thì hệ thống linux không đáp ứng được. Bài viết hướng dẫn đưa ROS serial lên STM32 để có thể đáp ứng được yêu cầu.&lt;/p&gt;
+&lt;p&gt;Phần cứng trong bài viết được sử dụng là board Nucleo STM32F746ZG chạy trên FreeRTOS. Có thể sử dụng board khác bằng cách sử dụng STMcubeIDE để generate lại board phù hợp và thay đổi config GPIO. Ngoài ra còn 1 board để chạy ROS core là RaspberryPi 4. 2 board giao tiếp qua USB CDC.&lt;/p&gt;
+&lt;h2 id=&#34;span-stylecolorbluenội-dungspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Nội dung:&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Các bạn tham khảo tại github theo link:
+&lt;a href=&#34;https://github.com/tinhnn/rosserial_stm32f7xx&#34;&gt;https://github.com/tinhnn/rosserial_stm32f7xx&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;span-stylecolorbluetham-khảospan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Tham khảo:&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://wiki.ros.org/rosserial&#34;&gt;http://wiki.ros.org/rosserial&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/nquantum/stm32_rosserial&#34;&gt;https://github.com/nquantum/stm32_rosserial&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
