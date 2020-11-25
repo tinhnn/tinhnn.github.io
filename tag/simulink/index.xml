@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | TinhNN Blog</title>
-    <link>/post/</link>
-      <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    <description>Posts</description>
+    <title>Simulink | TinhNN Blog</title>
+    <link>/tag/simulink/</link>
+      <atom:link href="/tag/simulink/index.xml" rel="self" type="application/rss+xml" />
+    <description>Simulink</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0900</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Posts</title>
-      <link>/post/</link>
+      <title>Simulink</title>
+      <link>/tag/simulink/</link>
     </image>
     
     <item>
@@ -142,95 +142,6 @@ y_right =
 &lt;h2 id=&#34;span-stylecolorbluelesson-9-span-a-namelesson9a&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Lesson 9: :&lt;/span&gt; &lt;a name=&#34;lesson9&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;span-stylecolorbluelesson-10-span-a-namelesson10a&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Lesson 10: :&lt;/span&gt; &lt;a name=&#34;lesson10&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;span-stylecolorbluelesson-11-span-a-namelesson11a&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Lesson 11: :&lt;/span&gt; &lt;a name=&#34;lesson11&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ROS Serial cho STM32</title>
-      <link>/post/rosserial_stm32/</link>
-      <pubDate>Sat, 21 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>/post/rosserial_stm32/</guid>
-      <description>&lt;h2 id=&#34;span-stylecolorbluegiới-thiệuspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Giới thiệu:&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;ROS chỉ được hỗ trợ chính thức trên hệ điều hành nhân linux. Vì vậy khi thực hiện những tác vụ đòi hỏi thời gian thực, độ chính xác về timing cao thì hệ thống linux không đáp ứng được. Bài viết hướng dẫn đưa ROS serial lên STM32 để có thể đáp ứng được yêu cầu.&lt;/p&gt;
-&lt;p&gt;Phần cứng trong bài viết được sử dụng là board Nucleo STM32F746ZG chạy trên FreeRTOS. Có thể sử dụng board khác bằng cách sử dụng STMcubeIDE để generate lại board phù hợp và thay đổi config GPIO. Ngoài ra còn 1 board để chạy ROS core là RaspberryPi 4. 2 board giao tiếp qua USB CDC.&lt;/p&gt;
-&lt;h2 id=&#34;span-stylecolorbluenội-dungspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Nội dung:&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;Ta sẽ cài ROS lên một thiết bị chạy linux, ở đây tôi dùng RaspberyPi4. Các bạn có thể tham khảo việc cài đặt ROS lên PI ở &lt;a href=&#34;https://nguyennhantinh.wordpress.com/2020/08/04/cai-ros-melodic-len-raspberrypi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;đây&lt;/a&gt;:&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure id=&#34;figure-ros-serial-diagram&#34;&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/ros_serialSTM/diagram.PNG&#34; data-caption=&#34;ROS Serial Diagram&#34;&gt;
-
-
-  &lt;img src=&#34;/img/ros_serialSTM/diagram.PNG&#34; alt=&#34;&#34;  &gt;
-&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    ROS Serial Diagram
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;p&gt;Download source code cho STM ở đây:
-&lt;a href=&#34;https://github.com/tinhnn/rosserial_stm32f7xx&#34;&gt;https://github.com/tinhnn/rosserial_stm32f7xx&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Sử dụng STM32CubeIde để build và flash. Source code được viết cho STM32F7 series, Nếu sử dụng board khác thì mở file &lt;code&gt;ROSSerial_STM32.ioc&lt;/code&gt; config sang board mà bạn sử dụng rồi gen lại code.&lt;/p&gt;
-&lt;p&gt;Kết nối Pi với STM32 qua USB.&lt;/p&gt;
-&lt;p&gt;Trên Pi, mở Terminal 1 và chạy ROS core:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-Shell&#34;&gt;$ roscore
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Mở Terminal 2 và chạy command:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-Shell&#34;&gt;$ rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Mở Terminal 3 và chạy command:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-Shell&#34;&gt;$ rostopic list
-/chatter
-/diagnostics
-/rosout
-/rosout_agg
-$ rostopic echo /chatter
-data: &amp;quot;Welcome to ROS Serial for STM32f7 series&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;span-stylecolorbluetham-khảospan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Tham khảo:&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;http://wiki.ros.org/rosserial&#34;&gt;http://wiki.ros.org/rosserial&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/nquantum/stm32_rosserial&#34;&gt;https://github.com/nquantum/stm32_rosserial&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Xử lý ảnh cơ bản</title>
-      <link>/post/image_processing_basic/</link>
-      <pubDate>Sat, 21 Nov 2020 00:00:00 +0900</pubDate>
-      <guid>/post/image_processing_basic/</guid>
-      <description>&lt;h2 id=&#34;span-stylecolorbluelesson-1-tách-vật-thểspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;&lt;strong&gt;Lesson 1&lt;/strong&gt;: Tách vật thể&lt;/span&gt;&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
-import cv2
-
-# TODO
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;span-stylecolorbluelesson-2span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;&lt;strong&gt;Lesson 2&lt;/strong&gt;:&lt;/span&gt;&lt;/h2&gt;
 </description>
     </item>
     

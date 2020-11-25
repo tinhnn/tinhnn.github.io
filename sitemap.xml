@@ -8,7 +8,37 @@
   </url>
   
   <url>
+    <loc>/tag/image-processing/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/matlab/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/matlab_basic/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/mbd-team/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/author/nguyen-nhan-tinh/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/open-cv/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/plm-team/</loc>
     <lastmod>2020-11-21T00:00:00+09:00</lastmod>
   </url>
   
@@ -33,6 +63,11 @@
   </url>
   
   <url>
+    <loc>/tag/simulink/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tag/stm/</loc>
     <lastmod>2020-11-21T00:00:00+09:00</lastmod>
   </url>
@@ -44,6 +79,11 @@
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/image_processing_basic/</loc>
     <lastmod>2020-11-21T00:00:00+09:00</lastmod>
   </url>
   

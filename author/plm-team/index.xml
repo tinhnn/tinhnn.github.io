@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PLM Team | TinhNN Blog</title>
+    <link>/author/plm-team/</link>
+      <atom:link href="/author/plm-team/index.xml" rel="self" type="application/rss+xml" />
+    <description>PLM Team</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0900</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>PLM Team</title>
+      <link>/author/plm-team/</link>
+    </image>
+    
+    <item>
+      <title>Xử lý ảnh cơ bản</title>
+      <link>/post/image_processing_basic/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0900</pubDate>
+      <guid>/post/image_processing_basic/</guid>
+      <description>&lt;h2 id=&#34;span-stylecolorbluelesson-1-tách-vật-thểspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;&lt;strong&gt;Lesson 1&lt;/strong&gt;: Tách vật thể&lt;/span&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+import cv2
+
+# TODO
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;span-stylecolorbluelesson-2span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;&lt;strong&gt;Lesson 2&lt;/strong&gt;:&lt;/span&gt;&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
