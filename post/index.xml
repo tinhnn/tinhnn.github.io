@@ -185,11 +185,15 @@ y_right =
       <link>/post/rosserial_stm32/</link>
       <pubDate>Sat, 21 Nov 2020 00:00:00 +0900</pubDate>
       <guid>/post/rosserial_stm32/</guid>
-      <description>&lt;h2 id=&#34;span-stylecolorbluegiới-thiệuspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Giới thiệu:&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;ROS chỉ được hỗ trợ chính thức trên hệ điều hành nhân linux. Vì vậy khi thực hiện những tác vụ đòi hỏi thời gian thực, độ chính xác về timing cao thì hệ thống linux không đáp ứng được. Bài viết hướng dẫn đưa ROS serial lên STM32 để có thể đáp ứng được yêu cầu.&lt;/p&gt;
-&lt;p&gt;Phần cứng trong bài viết được sử dụng là board Nucleo STM32F746ZG chạy trên FreeRTOS. Có thể sử dụng board khác bằng cách sử dụng STMcubeIDE để generate lại board phù hợp và thay đổi config GPIO. Ngoài ra còn 1 board để chạy ROS core là RaspberryPi 4. 2 board giao tiếp qua USB CDC.&lt;/p&gt;
-&lt;h2 id=&#34;span-stylecolorbluenội-dungspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Nội dung:&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;Ta sẽ cài ROS lên một thiết bị chạy linux, ở đây tôi dùng RaspberyPi4. Các bạn có thể tham khảo việc cài đặt ROS lên PI ở &lt;a href=&#34;https://nguyennhantinh.wordpress.com/2020/08/04/cai-ros-melodic-len-raspberrypi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;đây&lt;/a&gt;:&lt;/p&gt;
+      <description>&lt;h2 id=&#34;span-stylecolorblueintroducespan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Introduce:&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;ROS chỉ được hỗ trợ chính thức trên một số hệ điều hành nhân linux. Vì vậy khi thực hiện những tác vụ đòi hỏi thời gian thực, độ chính xác về timing cao sẽ không đáp ứng được. Và thật may là ROS có một package để có thể giao tiếp được với các board nhúng chạy RTOS là ROS Serial. Bài viết này sẽ  hướng dẫn đưa ROS Serial lên STM32 series.&lt;/p&gt;
+&lt;p&gt;Tôi đã sử dụng board Nucleo STM32F746ZG, và FreeRTOS. Các bạn có thể sử dụng chip/board khác. Hãy config lại file &lt;code&gt;.ioc&lt;/code&gt; cho chip/board của các bạn. Cần 1 board để chạy ROS server, ở đây tôi sử dụng RaspberryPi 4. Pi và Nucleo giao tiếp qua USB CDC.&lt;/p&gt;
+&lt;h2 id=&#34;span-stylecolorbluecontentspan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Content:&lt;/span&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Cài ROS cho RaspberyPi4 :&lt;br&gt;
+Nếu Pi chạy Ubuntu thì các bạn tham khảo &lt;a href=&#34;http://wiki.ros.org/melodic/Installation/Ubuntu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;br&gt;
+Nếu PI chạy Debian thì các bạn tham khảo &lt;a href=&#34;https://nguyennhantinh.wordpress.com/2020/08/04/cai-ros-melodic-len-raspberrypi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;:&lt;/li&gt;
+&lt;/ol&gt;
 
 
 
@@ -227,11 +231,15 @@ y_right =
 
 &lt;/figure&gt;
 
-&lt;p&gt;Download source code cho STM ở đây:
-&lt;a href=&#34;https://github.com/tinhnn/rosserial_stm32f7xx&#34;&gt;https://github.com/tinhnn/rosserial_stm32f7xx&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Sử dụng STM32CubeIde để build và flash. Source code được viết cho STM32F7 series, Nếu sử dụng board khác thì mở file &lt;code&gt;ROSSerial_STM32.ioc&lt;/code&gt; config sang board mà bạn sử dụng rồi gen lại code.&lt;/p&gt;
-&lt;p&gt;Kết nối Pi với STM32 qua USB.&lt;/p&gt;
-&lt;p&gt;Trên Pi, mở Terminal 1 và chạy ROS core:&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Flash cho nucleo board :&lt;br&gt;
+Download source code cho STM ở &lt;a href=&#34;https://github.com/tinhnn/ROSSerial_STM32&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;đây&lt;/a&gt; &lt;br&gt;
+Sử dụng STM32CubeIde để build và flash.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kết nối Pi với STM32 qua USB.&lt;br&gt;
+Trên Pi, mở Terminal 1 và chạy ROS core:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-Shell&#34;&gt;$ roscore
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Mở Terminal 2 và chạy command:&lt;/p&gt;
@@ -246,6 +254,8 @@ y_right =
 $ rostopic echo /chatter
 data: &amp;quot;Welcome to ROS Serial for STM32f7 series&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;span-stylecolorbluetham-khảospan&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt;Tham khảo:&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://wiki.ros.org/rosserial&#34;&gt;http://wiki.ros.org/rosserial&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/nquantum/stm32_rosserial&#34;&gt;https://github.com/nquantum/stm32_rosserial&lt;/a&gt;&lt;/p&gt;

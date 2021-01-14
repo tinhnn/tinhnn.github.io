@@ -690,11 +690,15 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h2 id="span-stylecolorbluegiới-thiệuspan"><span style="color:blue">Giới thiệu:</span></h2>
-<p>ROS chỉ được hỗ trợ chính thức trên hệ điều hành nhân linux. Vì vậy khi thực hiện những tác vụ đòi hỏi thời gian thực, độ chính xác về timing cao thì hệ thống linux không đáp ứng được. Bài viết hướng dẫn đưa ROS serial lên STM32 để có thể đáp ứng được yêu cầu.</p>
-<p>Phần cứng trong bài viết được sử dụng là board Nucleo STM32F746ZG chạy trên FreeRTOS. Có thể sử dụng board khác bằng cách sử dụng STMcubeIDE để generate lại board phù hợp và thay đổi config GPIO. Ngoài ra còn 1 board để chạy ROS core là RaspberryPi 4. 2 board giao tiếp qua USB CDC.</p>
-<h2 id="span-stylecolorbluenội-dungspan"><span style="color:blue">Nội dung:</span></h2>
-<p>Ta sẽ cài ROS lên một thiết bị chạy linux, ở đây tôi dùng RaspberyPi4. Các bạn có thể tham khảo việc cài đặt ROS lên PI ở <a href="https://nguyennhantinh.wordpress.com/2020/08/04/cai-ros-melodic-len-raspberrypi/" target="_blank" rel="noopener">đây</a>:</p>
+      <h2 id="span-stylecolorblueintroducespan"><span style="color:blue">Introduce:</span></h2>
+<p>ROS chỉ được hỗ trợ chính thức trên một số hệ điều hành nhân linux. Vì vậy khi thực hiện những tác vụ đòi hỏi thời gian thực, độ chính xác về timing cao sẽ không đáp ứng được. Và thật may là ROS có một package để có thể giao tiếp được với các board nhúng chạy RTOS là ROS Serial. Bài viết này sẽ  hướng dẫn đưa ROS Serial lên STM32 series.</p>
+<p>Tôi đã sử dụng board Nucleo STM32F746ZG, và FreeRTOS. Các bạn có thể sử dụng chip/board khác. Hãy config lại file <code>.ioc</code> cho chip/board của các bạn. Cần 1 board để chạy ROS server, ở đây tôi sử dụng RaspberryPi 4. Pi và Nucleo giao tiếp qua USB CDC.</p>
+<h2 id="span-stylecolorbluecontentspan"><span style="color:blue">Content:</span></h2>
+<ol>
+<li>Cài ROS cho RaspberyPi4 :<br>
+Nếu Pi chạy Ubuntu thì các bạn tham khảo <a href="http://wiki.ros.org/melodic/Installation/Ubuntu" target="_blank" rel="noopener">link</a><br>
+Nếu PI chạy Debian thì các bạn tham khảo <a href="https://nguyennhantinh.wordpress.com/2020/08/04/cai-ros-melodic-len-raspberrypi/" target="_blank" rel="noopener">link</a>:</li>
+</ol>
 
 
 
@@ -732,11 +736,15 @@
 
 </figure>
 
-<p>Download source code cho STM ở đây:
-<a href="https://github.com/tinhnn/rosserial_stm32f7xx">https://github.com/tinhnn/rosserial_stm32f7xx</a></p>
-<p>Sử dụng STM32CubeIde để build và flash. Source code được viết cho STM32F7 series, Nếu sử dụng board khác thì mở file <code>ROSSerial_STM32.ioc</code> config sang board mà bạn sử dụng rồi gen lại code.</p>
-<p>Kết nối Pi với STM32 qua USB.</p>
-<p>Trên Pi, mở Terminal 1 và chạy ROS core:</p>
+<ol start="2">
+<li>
+<p>Flash cho nucleo board :<br>
+Download source code cho STM ở <a href="https://github.com/tinhnn/ROSSerial_STM32" target="_blank" rel="noopener">đây</a> <br>
+Sử dụng STM32CubeIde để build và flash.</p>
+</li>
+<li>
+<p>Kết nối Pi với STM32 qua USB.<br>
+Trên Pi, mở Terminal 1 và chạy ROS core:</p>
 <pre><code class="language-Shell">$ roscore
 </code></pre>
 <p>Mở Terminal 2 và chạy command:</p>
@@ -751,6 +759,8 @@
 $ rostopic echo /chatter
 data: &quot;Welcome to ROS Serial for STM32f7 series&quot;
 </code></pre>
+</li>
+</ol>
 <h2 id="span-stylecolorbluetham-khảospan"><span style="color:blue">Tham khảo:</span></h2>
 <p><a href="http://wiki.ros.org/rosserial">http://wiki.ros.org/rosserial</a></p>
 <p><a href="https://github.com/nquantum/stm32_rosserial">https://github.com/nquantum/stm32_rosserial</a></p>
