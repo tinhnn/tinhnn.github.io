@@ -4,7 +4,42 @@
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/pham-ba-van/</loc>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/ros/</loc>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/ros_guideline/</loc>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/setup/</loc>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-01-14T00:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -43,16 +78,6 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/ros/</loc>
-    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/ros-serial/</loc>
     <lastmod>2020-11-21T00:00:00+09:00</lastmod>
   </url>
@@ -69,16 +94,6 @@
   
   <url>
     <loc>/tag/stm/</loc>
-    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-11-21T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2020-11-21T00:00:00+09:00</lastmod>
   </url>
   
